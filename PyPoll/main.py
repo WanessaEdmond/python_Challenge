@@ -26,7 +26,7 @@ with open('/Users/wedmo/OneDrive/Documents/Class/python_Challenge/PyPoll/Resourc
         #adding vote for each candidate 
         candidate_vote[row[2]]=candidate_vote[row[2]]+1
 
-    print(f'The total number of votes cast is {row_count}.')
+    print(f'The total number of votes is {row_count}.')
     
     # The percentage of votes each candidate won
     for candidate in candidate_vote:
@@ -40,3 +40,16 @@ with open('/Users/wedmo/OneDrive/Documents/Class/python_Challenge/PyPoll/Resourc
            Winner=vote_per_candidate
            winning_candidate = candidate
     print (f'The winner is {winning_candidate} with {Winner}')
+
+with open('analysis.txt', 'w') as txt_file:
+    txt_file.write('Election Results\n')
+    txt_file.write('----------------------------\n')
+    txt_file.write(f'Total Number of Votes: {row_count}\n')
+
+    txt_file.write(f'{candidate}:{vote_percentage:.3f}% ({vote_per_candidate}\n')
+
+
+    txt_file.write(f'The winner is {winning_candidate} with {Winner}\n')
+    
+
+print('The analysis has been exported to analysis.txt.')
